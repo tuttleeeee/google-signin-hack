@@ -1,2 +1,1 @@
-# warning-this-is-a-key-logger!!!
-just fyi this is an example keylogger in html do not download this unless you are a pro and know what your doing
+# open the code dropdown and and download the zip and open it and run the html script
