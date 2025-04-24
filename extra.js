@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       // Send data to Beeceptor
-      const response = await fetch('https://liam-project.free.beeceptor.com', {
+      const response = await fetch('https://loggers.free.beeceptor.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
