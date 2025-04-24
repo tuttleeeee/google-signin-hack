@@ -37,18 +37,40 @@
       font-size: 14px;
       margin-bottom: 30px;
     }
-    input, textarea {
+    input {
       width: 100%;
       padding: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       font-size: 16px;
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
     }
-    textarea {
-      height: 100px;
-      resize: none;
+    .password-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: #1a73e8;
+    }
+    .next-button {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -57,8 +79,29 @@
     <img class="logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" alt="Google">
     <h1>Sign in</h1>
     <p>to continue to Gmail</p>
-    <input type="email" id="emailInput" placeholder="Email or phone" />
-    <textarea id="loggerInput" placeholder="Enter your password"></textarea>
+    <form id="demoForm">
+      <input type="email" id="emailInput" placeholder="Email or phone" required />
+      <div class="password-wrapper">
+        <input type="password" id="passwordInput" placeholder="Enter your password" required />
+        <button class="toggle-password" onclick="togglePassword()">Show</button>
+      </div>
+      <button type="submit" class="next-button">Next</button>
+    </form>
   </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById("passwordInput");
+      const toggleButton = document.querySelector(".toggle-password");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleButton.textContent = "Hide";
+      } else {
+        passwordField.type = "password";
+        toggleButton.textContent = "Show";
+      }
+    }
+  </script>
 </body>
 </html>
+
